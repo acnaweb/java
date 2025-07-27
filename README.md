@@ -2,18 +2,12 @@
 
 📘 Guia oficial: https://spring.io/guides/tutorials/rest
 
-## Spring Initializr
+- **[Spring Initializr](docs/spring-initializr.md)**  
 
-- spring-initializr.md
+- **[Controller](docs/api-controller.md)** 
 
-## Controller
+- **[Endpoints (rotas)](docs/endpoints.md)** 
 
-- api-controller.md
-
-
-## Endpoints (rotas)
-
-- operacoes-rest.md
 
 ## OpenAPI
 
@@ -21,39 +15,11 @@
 
 ## Http Status Code
 
-Referência: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
-
-Exemplos:
-```java
-return ResponseEntity.status(201).body(produto);
-return ResponseEntity.ok(produto);
-return ResponseEntity.noContent().build();
-return ResponseEntity.notFound().build();
-```
-
-## ResponseEntity
-Classe que representa a resposta HTTP.
-
-```java
-ResponseEntity.ok(obj);
-ResponseEntity.status(HttpStatus.CREATED).body(obj);
-ResponseEntity.notFound().build();
-ResponseEntity.noContent().build();
-```
+- http-status-code.md
 
 ## Service
-Camada que contém a lógica de negócio da aplicação.
 
-```java
-@Service
-public class ProdutoService {
-    public ProdutoDto findById(Long id) {
-        return repository.findById(id)
-            .map(this::toDto)
-            .orElseThrow(() -> new RuntimeException("Not found"));
-    }
-}
-```
+- service
 
 ## Database
 Configuração do MySQL:

@@ -18,7 +18,7 @@ Spring Boot utiliza a classe `ResponseEntity` para construir respostas com **sta
 ### Exemplos práticos:
 ```java
 // Criar um recurso (201 Created)
-return ResponseEntity.status(201).body(produto);
+return ResponseEntity.status(HttpStatus.CREATED).body(produto);
 
 // Resposta OK com conteúdo (200 OK)
 return ResponseEntity.ok(produto);
