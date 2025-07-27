@@ -33,6 +33,7 @@
 - **[Spring Data Projections](docs/data-projections.md)**  
 - **[Pagination & Sort](docs/data-pagination.md)**  
 - **[Migrations (Flyway)](docs/migrations.md)**  
+- **[Spring List Of Values](https://github.com/acnaweb/spring)**
 
 ### 🛠 Utilitários
 - **[Optional](docs/optional.md)**  
@@ -48,6 +49,7 @@
 ### ⚙️ Configurações Avançadas
 - **[Spring Profiles](docs/profiles.md)**  
 - **[Cache](docs/cache.md)**  
+- **[Feature Flag](docs/feature-flag.md)**
 
 ### 🐳 Deploy
 - **[Dockerfile](docs/docker.md)**  
@@ -119,10 +121,7 @@ mvn test
 
 ---
 
-## Ajustar
-
-https://github.com/acnaweb/kafka
-
+# Diversos
 
 ## Deploy Manual to Cloud
 
@@ -131,49 +130,18 @@ Opções:
 - AWS Elastic Beanstalk
 - Azure App Service
 
-## Spring List Of Values
-
-- https://github.com/acnaweb/spring
-
 ## Continuous Integration / Delivery / Deployment
+
 Ferramentas:
+
 - GitHub Actions
 - Jenkins
 - GitLab CI/CD
 
-## Feature Flag
-
-- https://martinfowler.com/bliki/FeatureFlag.html
-
-```properties
-feature.produtos.enabled=true
-feature.clientes.enabled=false
-```
-
-```FeatureFlagInterceptor.java
-@Component
-public class FeatureFlagInterceptor implements HandlerInterceptor {
-
-    @Value("${feature.clientes.enabled:false}")
-    private boolean clientesEnabled;
-
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-        throws Exception {
-
-        if (request.getRequestURI().startsWith("/clientes") && !clientesEnabled) {
-            response.setStatus(HttpStatus.NOT_IMPLEMENTED.value());
-            response.getWriter().write("Endpoint /clientes está desabilitado por feature flag.");
-            return false;
-        }
-        return true;
-    }
-}
-```
-
 ## Api Gateway
 
 Utilize:
+
 - Spring Cloud Gateway
 - Kong
 - NGINX
