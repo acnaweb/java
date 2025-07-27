@@ -37,6 +37,10 @@
 
 - streams.md
 
+## Lombok
+
+- lombok.md
+
 ## DTO Mapper
 
 - dtos.md
@@ -50,14 +54,8 @@
 - exception-handler.md
 
 ## Validation
-Validação de entrada:
 
-```java
-public record ProdutoDto(
-    @NotBlank(message = "Nome é obrigatório")
-    String nome
-) { }
-```
+- validations
 
 ## Spring Data Projections
 
@@ -65,69 +63,26 @@ public record ProdutoDto(
 
 ## Pagination & Sort
 
-- data-pagination
+- data-pagination.md
 
 ## Spring Framework Profiles
-Configuração por ambiente:
 
-```properties
-# application-dev.properties
-app.feature.enabled=true
-```
+- profiles.md
 
-Execução:
-```bash
--Dspring.profiles.active=dev
-```
+## Docker (Dockerfile)
 
-## Spring Environment Variable
+- docker.md
 
-Uso de variáveis externas:
+## Docker Compose
 
-```properties
-app.url=${APP_URL:http://localhost}
-```
-
-## Docker
-Empacotando a aplicação:
-
-```dockerfile
-FROM openjdk:17
-COPY target/api.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-```
-
-## Docker Composer
-Gerenciando múltiplos containers:
-
-```yaml
-version: '3'
-services:
-  db:
-    image: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root_pwd
-      MYSQL_DATABASE: api
-```
+- docker-compose.md
 
 ## Deploy Manual to Cloud
+
 Opções:
 - Google Cloud Run
 - AWS Elastic Beanstalk
 - Azure App Service
-
-## Lombok
-Simplifica getters, setters, construtores.
-
-```java
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Produto { ... }
-```
-
-🔗 https://projectlombok.org/
 
 
 ## Unit Tests
@@ -155,18 +110,12 @@ Uso de herança em entidades:
 public abstract class Pessoa { ... }
 ```
 
-
 ## Security
-Exemplo com `httpBasic()`:
 
-```java
-@Override
-protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
-}
-```
+- security.md
 
 ## API Versioning
+
 Controle de versão por rota:
 
 ```java
