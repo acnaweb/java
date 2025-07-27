@@ -22,33 +22,16 @@
 - service.md
 
 ## Database
-Configuração do MySQL:
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/api?createDatabaseIfNotExist=true
-spring.datasource.username=root
-spring.datasource.password=root_pwd
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-```
+- database.md
 
 ## Spring Data Repository
-Interface para persistência:
 
-```java
-public interface ProdutoRepository extends JpaRepository<Produto, Long> {
-    List<Produto> findByNomeContaining(String nome);
-}
-```
+- repository
 
 ## Optional
-Evita `NullPointerException`:
 
-```java
-Optional<Produto> produto = repository.findById(1L);
-produto.ifPresent(System.out::println);
-```
+- optional
 
 ## List<?> Stream
 Manipulação com Java Streams:
