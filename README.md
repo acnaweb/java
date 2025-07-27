@@ -4,15 +4,7 @@
 
 ## Spring Initializr
 
-Ferramenta para geração de projetos Spring Boot.
-
-🌐 https://start.spring.io/
-
-Selecione dependências como:
-- Spring Web
-- Spring Data JPA
-- MySQL Driver
-- Lombok
+- spring-initializr.md
 
 ## Controller
 
