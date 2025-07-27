@@ -1,81 +1,128 @@
-# Java
+# Java 🚀 Projeto Spring Boot – Documentação
 
 📘 Guia oficial: https://spring.io/guides/tutorials/rest
 
+![Java](https://img.shields.io/badge/Java-17-blue)  
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0-brightgreen)  
+![Maven](https://img.shields.io/badge/Maven-Build-orange)  
+![Docker](https://img.shields.io/badge/Docker-Supported-blue)  
+
+---
+
+## 📚 Sumário
+
+### ✅ Inicialização
 - **[Spring Initializr](docs/spring-initializr.md)**  
 
-- **[Controller](docs/api-controller.md)** 
+### 🌐 API
+- **[Controller](docs/api-controller.md)**  
+- **[Endpoints (rotas)](docs/endpoints.md)**  
+- **[OpenAPI](docs/openapi.md)**  
+- **[API Versioning](docs/api-versioning.md)**  
 
-- **[Endpoints (rotas)](docs/endpoints.md)** 
+### ✅ Padrões HTTP
+- **[HTTP Status Codes](docs/http-status-code.md)**  
 
+### 🏗 Camada de Negócio
+- **[Service](docs/service.md)**  
 
-## OpenAPI
+### 🗄 Banco de Dados
+- **[Database](docs/database.md)**  
+- **[Spring Data Repository](docs/repository.md)**  
+- **[Spring Data Relationships](docs/data-relationships.md)**  
+- **[Spring Data Projections](docs/data-projections.md)**  
+- **[Pagination & Sort](docs/data-pagination.md)**  
+- **[Migrations (Flyway)](docs/migrations.md)**  
 
-- openapi.md
+### 🛠 Utilitários
+- **[Optional](docs/optional.md)**  
+- **[Streams (List<?>)](docs/streams.md)**  
+- **[Lombok](docs/lombok.md)**  
+- **[DTO Mapper](docs/dtos.md)**  
 
-## Http Status Code
+### 🛡 Segurança & Validação
+- **[Validation](docs/validations.md)**  
+- **[Exception Handler](docs/exception-handler.md)**  
+- **[Security](docs/security.md)**  
 
-- http-status-code.md
+### ⚙️ Configurações Avançadas
+- **[Spring Profiles](docs/profiles.md)**  
+- **[Cache](docs/cache.md)**  
 
-## Service
+### 🐳 Deploy
+- **[Dockerfile](docs/docker.md)**  
+- **[Docker Compose](docs/docker-compose.md)**  
 
-- service.md
+### 🔗 Integrações
+- **[Webhook](docs/webhook.md)**  
+- **[Kafka](docs/kafka.md)**  
 
-## Database
+### 🧪 Testes
+- **[Unit Tests](docs/unit-test.md)**  
+- **[Unit Tests (Controller)](docs/unit-test-controller.md)**  
+- **[Integrated Tests](docs/integrated-tests.md)**  
 
-- database.md
+### 🔍 Qualidade de Código
+- **[Code Quality](docs/code-quality.md)**  
 
-## Spring Data Repository
+---
 
-- repository.md
+## ⚡ Como Executar o Projeto
 
-## Optional
+### ✅ Via Maven
+```bash
+mvn spring-boot:run
+```
 
-- optional.md
+### ✅ Via Docker
+```bash
+docker build -t meu-app .
+docker run -p 8080:8080 meu-app
+```
 
-## List<?> Stream
+### ✅ Via Docker Compose
+```bash
+docker-compose up --build
+```
 
-- streams.md
+---
 
-## Lombok
+## 📐 Diagrama da Arquitetura (Mermaid)
 
-- lombok.md
+```mermaid
+flowchart TD
+    A[Controller] --> B[Service]
+    B --> C[Repository]
+    C --> D[(Database)]
+    A -->|REST API| E[Cliente Externo]
+```
 
-## DTO Mapper
+---
 
-- dtos.md
+## 🔗 Endpoints Principais (Exemplo)
 
-## Spring Data Relationships
+| Método | Rota                | Descrição             |
+|--------|----------------------|----------------------|
+| GET    | `/api/v1/produtos`  | Lista todos produtos |
+| GET    | `/api/v1/produtos/{id}` | Busca por ID       |
+| POST   | `/api/v1/produtos`  | Cria um novo produto |
+| PUT    | `/api/v1/produtos/{id}` | Atualiza produto   |
+| DELETE | `/api/v1/produtos/{id}` | Remove produto     |
 
-- data-relationships.md
+---
 
-## Exception Handler
+## ✅ Testes
+Rodar testes unitários:
+```bash
+mvn test
+```
 
-- exception-handler.md
+---
 
-## Validation
+## Ajustar
 
-- validations
+https://github.com/acnaweb/kafka
 
-## Spring Data Projections
-
-- data-projections.md
-
-## Pagination & Sort
-
-- data-pagination.md
-
-## Spring Framework Profiles
-
-- profiles.md
-
-## Docker (Dockerfile)
-
-- docker.md
-
-## Docker Compose
-
-- docker-compose.md
 
 ## Deploy Manual to Cloud
 
@@ -84,48 +131,9 @@ Opções:
 - AWS Elastic Beanstalk
 - Azure App Service
 
-
-## Unit Tests
-Teste com MockMvc:
-
-```java
-@SpringBootTest
-@AutoConfigureMockMvc
-class ProdutoControllerTest {
-    @Autowired MockMvc mockMvc;
-
-    @Test
-    void testPing() throws Exception {
-        mockMvc.perform(get("/ping")).andExpect(status().isOk());
-    }
-}
-```
-
 ## Spring List Of Values
-Uso de herança em entidades:
 
-```java
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Pessoa { ... }
-```
-
-## Security
-
-- security.md
-
-## API Versioning
-
-Controle de versão por rota:
-
-```java
-@RequestMapping("/api/v1/produtos")
-```
-
-## Code Quality - Checkstyle
-Ferramenta de análise estática de código.
-
-🔗 https://checkstyle.sourceforge.io/
+- https://github.com/acnaweb/spring
 
 ## Continuous Integration / Delivery / Deployment
 Ferramentas:
@@ -163,42 +171,8 @@ public class FeatureFlagInterceptor implements HandlerInterceptor {
 }
 ```
 
-## Cache
-Anotação `@Cacheable`:
-
-```java
-@Cacheable("produtos")
-public Produto buscar(Long id) { ... }
-```
-
-## Migrations
-Usando Flyway:
-
-```sql
--- V1__create_produto.sql
-CREATE TABLE produto (...);
-```
-
-🔗 https://www.baeldung.com/database-migrations-with-flyway
-
-## Integration WebWook
-Envio de eventos:
-
-```java
-restTemplate.postForEntity("https://webhook.site", payload, Void.class);
-```
-
-## Integration Kafka
-Produção de mensagens:
-
-```java
-@Autowired
-private KafkaTemplate<String, String> kafka;
-
-kafka.send("topico", "mensagem");
-```
-
 ## Api Gateway
+
 Utilize:
 - Spring Cloud Gateway
 - Kong
