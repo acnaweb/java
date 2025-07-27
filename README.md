@@ -27,65 +27,45 @@
 
 ## Spring Data Repository
 
-- repository
+- repository.md
 
 ## Optional
 
-- optional
+- optional.md
 
 ## List<?> Stream
-Manipulação com Java Streams:
 
-```java
-List<Produto> ativos = produtos.stream()
-    .filter(p -> p.isAtivo())
-    .map(this::toDto)
-    .collect(Collectors.toList());
-```
+- streams.md
 
 ## DTO Mapper
-Conversão entre entidades e DTOs.
 
-```java
-public ProdutoDto toDto(Produto model) { ... }
-public Produto toModel(ProdutoDto dto) { ... }
-```
-
-🔗 https://modelmapper.org/
+- dtos.md
 
 ## Spring Data Relationships
-Mapeamento entre entidades:
+
+- data-relationships.md
+
+## Exception Handler
+
+- exception-handler.md
+
+## Validation
+Validação de entrada:
 
 ```java
-@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
-private List<Item> items;
-
-@ManyToOne
-@JoinColumn(name = "pedido_id")
-private Pedido pedido;
+public record ProdutoDto(
+    @NotBlank(message = "Nome é obrigatório")
+    String nome
+) { }
 ```
 
 ## Spring Data Projections
-Projeções de dados com interfaces:
 
-```java
-public interface ProdutoView {
-    String getNome();
-    BigDecimal getValor();
-}
-```
-
-🔗 https://www.baeldung.com/spring-data-jpa-projections
+- data-projections.md
 
 ## Pagination & Sort
-Paginação com Pageable:
 
-```java
-@GetMapping
-public Page<Produto> listar(Pageable pageable) {
-    return repository.findAll(pageable);
-}
-```
+- data-pagination
 
 ## Spring Framework Profiles
 Configuração por ambiente:
@@ -101,6 +81,7 @@ Execução:
 ```
 
 ## Spring Environment Variable
+
 Uso de variáveis externas:
 
 ```properties
@@ -148,18 +129,6 @@ public class Produto { ... }
 
 🔗 https://projectlombok.org/
 
-## Exception Handler
-Tratamento global:
-
-```java
-@ControllerAdvice
-public class GlobalExceptionHandler {
-    @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<String> handleNotFound(NotFoundException e) {
-        return ResponseEntity.status(404).body(e.getMessage());
-    }
-}
-```
 
 ## Unit Tests
 Teste com MockMvc:
@@ -186,15 +155,6 @@ Uso de herança em entidades:
 public abstract class Pessoa { ... }
 ```
 
-## Validation
-Validação de entrada:
-
-```java
-public record ProdutoDto(
-    @NotBlank(message = "Nome é obrigatório")
-    String nome
-) { }
-```
 
 ## Security
 Exemplo com `httpBasic()`:
