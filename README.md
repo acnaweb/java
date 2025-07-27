@@ -16,19 +16,11 @@
 - operacoes-rest.md
 
 ## OpenAPI
-Documentação interativa da API.
 
-- 📘 https://springdoc.org/
-- 📘 https://swagger.io/specification/
-
-Configuração:
-```properties
-springdoc.swagger-ui.path=/
-```
-
-Acesse em `http://localhost:8080/`
+- openapi.md
 
 ## Http Status Code
+
 Referência: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
 
 Exemplos:
