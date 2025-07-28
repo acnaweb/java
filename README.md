@@ -16,7 +16,7 @@
 
 ### 🌐 API
 - **[Controller](docs/api-controller.md)**  
-- **[Endpoints (rotas)](docs/endpoints.md)**  
+- **[Endpoints (rotas)](docs/endpoint.md)**  
 - **[OpenAPI](docs/openapi.md)**  
 - **[API Versioning](docs/api-versioning.md)**  
 
