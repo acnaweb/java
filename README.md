@@ -29,8 +29,8 @@
 ### 🗄 Banco de Dados
 - **[Database](docs/database.md)**  
 - **[Spring Data Repository](docs/data-repository.md)**  
-- **[Spring Data Relationships](docs/data-relationships.md)**  
-- **[Spring Data Projections](docs/data-projections.md)**  
+- **[Spring Data Relationships](docs/data-relationship.md)**  
+- **[Spring Data Projections](docs/data-projection.md)**  
 - **[Pagination & Sort](docs/data-pagination.md)**  
 - **[Migrations (Flyway)](docs/migrations.md)**  
 - **[Spring List Of Values](https://github.com/acnaweb/spring)**
