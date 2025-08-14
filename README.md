@@ -28,7 +28,7 @@
 
 ### 🗄 Banco de Dados
 - **[Database](docs/database.md)**  
-- **[Spring Data Repository](docs/repository.md)**  
+- **[Spring Data Repository](docs/data-repository.md)**  
 - **[Spring Data Relationships](docs/data-relationships.md)**  
 - **[Spring Data Projections](docs/data-projections.md)**  
 - **[Pagination & Sort](docs/data-pagination.md)**  
@@ -47,7 +47,7 @@
 - **[Security](docs/security.md)**  
 
 ### ⚙️ Configurações Avançadas
-- **[Spring Profiles](docs/profiles.md)**  
+- **[Spring Profiles](docs/profile.md)**  
 - **[Cache](docs/cache.md)**  
 - **[Feature Flag](docs/feature-flag.md)**
 
