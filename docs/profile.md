@@ -68,9 +68,15 @@ $env:DB_PASSWORD="secret123"
 ---
 
 ## Ativar um Profile
+
+Via parâmetro Spring Boot (Maven):
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
 Via parâmetro JVM:
 ```bash
--Dspring.profiles.active=dev
+java -jar <app.jar> -Dspring.profiles.active=dev
 ```
 
 Ou no **application.properties**:
