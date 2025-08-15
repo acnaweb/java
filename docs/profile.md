@@ -76,7 +76,7 @@ mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 Via parâmetro JVM:
 ```bash
-java -jar <app.jar> -Dspring.profiles.active=dev
+java -Dspring.profiles.active=dev -jar <app.jar> 
 ```
 
 Ou no **application.properties**:
