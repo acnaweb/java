@@ -98,5 +98,6 @@ docker push usuario/minha-app:1.0.0
 
 ## Referências
 - [Docker Docs](https://docs.docker.com/)
+- [Cheet Sheat](https://devhints.io/docker-compose)
 - [Spring Boot Containerization](https://spring.io/guides/topicals/spring-boot-docker)
 - https://github.com/acnaweb/docker
