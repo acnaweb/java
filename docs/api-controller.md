@@ -20,23 +20,11 @@ public class PingController {
     public String ping() {
         return "pong"; // Resposta padrão
     }
-
-    @GetMapping("/rota1")
-    public String rota1() {
-        return "rota1";
-    }
-
-    @GetMapping("/rota2")
-    public String rota2() {
-        return "rota2";
-    }
 }
 ```
 
 ### Comportamento:
 - `GET /ping` → `"pong"`  
-- `GET /ping/rota1` → `"rota1"`  
-- `GET /ping/rota2` → `"rota2"`  
 
 ## Alternativas  
 
