@@ -9,6 +9,7 @@ Como gerar **documentação interativa** para APIs Spring Boot, permitindo teste
 
 ## Solução
 Utilize **Springdoc OpenAPI** para integrar **Swagger UI** ao seu projeto Spring Boot.
+- https://springdoc.org/
 
 ---
 
