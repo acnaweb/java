@@ -27,7 +27,7 @@
 - **[Service](docs/service.md)**  
 
 ### 🗄 Banco de Dados
-- **[Database](docs/database.md)**  
+- **[Database](docs/data-setup.md)**  
 - **[Spring Data Repository](docs/data-repository.md)**  
 - **[Spring Data Relationships](docs/data-relationship.md)**  
 - **[Spring Data Projections](docs/data-projection.md)**  
