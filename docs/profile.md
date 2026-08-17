@@ -72,8 +72,13 @@ $env:DB_PASSWORD="secret123"
 Via parâmetro Spring Boot (Maven):
 
 ```bash
+ # Windows
+./mvnw spring-boot:run "-Dspring-boot.run.profiles=dev"
+
+# Linux
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
+
 Via parâmetro JVM:
 ```bash
 java -Dspring.profiles.active=dev -jar <app.jar> 
